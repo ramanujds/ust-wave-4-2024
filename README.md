@@ -6,4 +6,5 @@
 
 ### Java Project Structure
 
-![image](https://github.com/user-attachments/assets/fa8c2b95-01d5-4df2-879d-010c5da89b89)
+![image](https://github.com/user-attachments/assets/150bfa70-c97a-4410-b929-a016d81e3e17)
+
