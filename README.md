@@ -8,3 +8,22 @@
 
 ![image](https://github.com/user-attachments/assets/150bfa70-c97a-4410-b929-a016d81e3e17)
 
+
+## Java Data Types
+
+### Primary Data Types
+
+- int
+- long
+- short
+- byte
+- float
+- double
+- char
+- boolean
+
+### Reference Data Type
+
+- string
+- array
+- class
