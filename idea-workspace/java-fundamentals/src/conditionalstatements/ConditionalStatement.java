@@ -26,7 +26,7 @@ public class ConditionalStatement {
             case 5 -> "Friday";
             case 6 -> "Saturday";
             case 7 -> "Sunday";
-            default -> "Invalid Day";
+            default -> throw new IllegalArgumentException("Invalid Input");
         };
 
         System.out.println(dayName);
@@ -36,3 +36,5 @@ public class ConditionalStatement {
 
 
 }
+
+
