@@ -5,19 +5,23 @@ You are tasked with creating a Java program that acts as a "Mysterious Number Gu
 Here are the specifications for the program:
 
 1. The program should display a welcome message and instructions for the user.
-
 2. It should generate a random number between 1 and 100 (inclusive) and store it as the "mysterious number."
 
+   **Hints : How to hgenerate a random number?**
+
+   ```java
+   Random random = new Random();
+   int num = random.nextInt(100);
+   ```
 3. The user should be prompted to enter their guess.
-
 4. If the user's guess is correct, the program should congratulate the user and terminate.
-
 5. If the user's guess is incorrect, the program should provide a hint:
-    - If the guess is within 10 units of the mysterious number (either higher or lower), the program should say, "You're getting close!"
-    - If the guess is more than 10 units away from the mysterious number, the program should say, "You're far away!"
 
+   - If the guess is within 10 units of the mysterious number (either higher or lower), the program should say, "You're getting close!"
+   - If the guess is more than 10 units away from the mysterious number, the program should say, "You're far away!"
 
 Example Output:
+
 ```
 Welcome to the Mysterious Number Guesser!
 I have selected a number between 1 and 100. Can you guess it?
