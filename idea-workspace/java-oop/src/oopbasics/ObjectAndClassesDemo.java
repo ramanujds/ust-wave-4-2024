@@ -9,21 +9,22 @@ public class ObjectAndClassesDemo {
         Company c2 = new Company("Deloitte","Bangalore","Auditing");
 
         Trainee trainee1 = new Trainee(1,"Vishnu", "Java");
-        trainee1.setCompany(c2);
-        printTrainee(trainee1);
+       trainee1.setCompany(c2);
+
+        System.out.println(trainee1);
 
     }
 
-    public static void printTrainee(Trainee trainee){
-        System.out.printf("""
-                ID : %d
-                Name : %s
-                Language : %s
-                %n""", trainee.getId(),
-                trainee.getName(),trainee.getLanguage());
-        System.out.println("Company : ");
-        Company company = trainee.getCompany();
-        company.printDetails();
-    }
+//    public static void printTrainee(Trainee trainee){
+//        System.out.printf("""
+//                ID : %d
+//                Name : %s
+//                Language : %s
+//                %n""", trainee.getId(),
+//                trainee.getName(),trainee.getLanguage());
+//        System.out.println("Company : ");
+//        Company company = trainee.getCompany();
+//        company.printDetails();
+//    }
 
 }

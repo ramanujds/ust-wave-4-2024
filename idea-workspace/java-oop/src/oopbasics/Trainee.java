@@ -1,5 +1,7 @@
 package oopbasics;
 
+import java.util.StringJoiner;
+
 public class Trainee{
     private int id;
     private String name;
@@ -57,6 +59,16 @@ public class Trainee{
 
     public void setCompany(Company company) {
         this.company = company;
+    }
+
+
+    public String toString() {
+        return new StringJoiner(", ", Trainee.class.getSimpleName() + "[", "]")
+                .add("id=" + id)
+                .add("name='" + name + "'")
+                .add("company=" + company)
+                .add("language='" + language + "'")
+                .toString();
     }
 }
 

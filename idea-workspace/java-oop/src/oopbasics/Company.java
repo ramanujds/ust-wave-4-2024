@@ -1,5 +1,7 @@
 package oopbasics;
 
+import java.util.StringJoiner;
+
 public class Company {
 
     private String name;
@@ -36,11 +38,12 @@ public class Company {
         this.type = type;
     }
 
-    public void printDetails(){
-        System.out.printf("""
-                Name : %s
-                Location : %s
-                Type : %s
-                """,name,location,type);
+
+    public String toString() {
+        return new StringJoiner(", ", Company.class.getSimpleName() + "[", "]")
+                .add("name='" + name + "'")
+                .add("location='" + location + "'")
+                .add("type='" + type + "'")
+                .toString();
     }
 }
