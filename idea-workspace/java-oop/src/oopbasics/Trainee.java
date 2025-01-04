@@ -3,8 +3,7 @@ package oopbasics;
 public class Trainee{
     private int id;
     private String name;
-    static String company;
-    // private Company company;
+    private Company company;
     private String language;
 
     public Trainee(){
@@ -47,9 +46,17 @@ public class Trainee{
         return language;
     }
 
+
     public void setLanguage(String language) {
         this.language = language;
     }
 
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
 }
 

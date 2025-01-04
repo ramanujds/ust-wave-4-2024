@@ -4,8 +4,12 @@ package oopbasics;
 public class ObjectAndClassesDemo {
 
     public static void main(String[] args) {
-        Trainee.company = "UST Global";
+
+        Company c1 = new Company("UST Global","Trivandrum","IT Consulting");
+        Company c2 = new Company("Deloitte","Bangalore","Auditing");
+
         Trainee trainee1 = new Trainee(1,"Vishnu", "Java");
+        trainee1.setCompany(c2);
         printTrainee(trainee1);
 
     }
@@ -14,10 +18,12 @@ public class ObjectAndClassesDemo {
         System.out.printf("""
                 ID : %d
                 Name : %s
-                Company : %s
                 Language : %s
                 %n""", trainee.getId(),
-                trainee.getName(),Trainee.company,trainee.getLanguage());
+                trainee.getName(),trainee.getLanguage());
+        System.out.println("Company : ");
+        Company company = trainee.getCompany();
+        company.printDetails();
     }
 
 }
