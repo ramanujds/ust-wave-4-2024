@@ -9,7 +9,7 @@ public class ObjectAndClassesDemo {
         Company c2 = new Company("Deloitte","Bangalore","Auditing");
 
         Trainee trainee1 = new Trainee(1,"Vishnu", "Java");
-       trainee1.setCompany(c2);
+        trainee1.setCompany(c2);
 
         System.out.println(trainee1);
 
