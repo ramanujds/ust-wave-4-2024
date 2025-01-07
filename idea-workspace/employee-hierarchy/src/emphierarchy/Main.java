@@ -7,9 +7,11 @@ public class Main {
 
         emp = new BackendDeveloper(101, "Akash", 65000, "Java", "MySQL");
 
-        emp.printDetails();
+        emp.doWork();
 
         emp = new Manager(101, "Akash", 80000, 8);
+
+        emp.doWork();
 
     }
 }

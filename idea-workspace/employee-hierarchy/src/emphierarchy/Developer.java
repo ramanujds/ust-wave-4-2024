@@ -1,6 +1,6 @@
 package emphierarchy;
 
-public class Developer extends Employee{
+public abstract class Developer extends Employee{
     private String language;
 
     public Developer(int id, String name, double salary, String language) {
@@ -20,4 +20,8 @@ public class Developer extends Employee{
         super.printDetails();
         System.out.println("Programming Language : "+language);
     }
+
+
+
+
 }

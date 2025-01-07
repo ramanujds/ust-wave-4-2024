@@ -14,4 +14,10 @@ public class BackendDeveloper extends Developer{
         super.printDetails();
         System.out.println("Database : "+database);
     }
+
+    public void doWork() {
+        System.out.println("Working on Code and Database");
+    }
+
+
 }
