@@ -23,6 +23,12 @@ public class EmployeeOperationImpl implements EmployeeOperation{
     }
 
     public Employee findEmployeeById(int id) {
+
+        for (int i = 0; i < 10; i++) {
+            if (employees[i] !=null && employees[i].getId()==id){
+                return employees[i];
+            }
+        }
         return null;
     }
 }

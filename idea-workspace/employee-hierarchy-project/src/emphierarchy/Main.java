@@ -18,12 +18,18 @@ public class Main {
         employeeOperation.addEmployee(emp2);
 
         // Find an employee with id
-//        int id = 1;
-//        Employee emp = employeeOperation.findEmployeeById(id);
+        int id = 5;
+        Employee emp = employeeOperation.findEmployeeById(id);
+
+        if (emp == null) {
+            System.err.println("No Employee present with id : "+id);
+        }
+        else
+            System.out.println(emp);
 
         // Display all the employees
 
-        employeeOperation.showAllEmployees();
+ //       employeeOperation.showAllEmployees();
 
         // Task to do later
         // Ask user to select an option

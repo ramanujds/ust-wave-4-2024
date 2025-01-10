@@ -1,6 +1,8 @@
 package emphierarchy.model;
 
-public abstract class Employee {
+import java.util.StringJoiner;
+
+public abstract class Employee extends Object {
 
     // add private fields for id, name and salary
 
@@ -43,6 +45,12 @@ public abstract class Employee {
     public abstract void showDetails();
 
 
-
-
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", Employee.class.getSimpleName() + "[", "]")
+                .add("id=" + id)
+                .add("name='" + name + "'")
+                .add("salary=" + salary)
+                .toString();
+    }
 }

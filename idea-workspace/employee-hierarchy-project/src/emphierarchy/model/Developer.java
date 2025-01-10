@@ -1,5 +1,7 @@
 package emphierarchy.model;
 
+import java.util.StringJoiner;
+
 public class Developer extends Employee{
 
     private String language;
@@ -32,4 +34,12 @@ public class Developer extends Employee{
     // extends the Employee class
     // add a new field language
 
+
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", Developer.class.getSimpleName() + "[", "]")
+                .add("language='" + language + "'")
+                .add(super.toString())
+                .toString();
+    }
 }
