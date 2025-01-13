@@ -1,16 +1,16 @@
 package emphierarchy.service;
 
 import emphierarchy.exception.InvalidInputException;
+import emphierarchy.exception.RecordNotFoundException;
 import emphierarchy.model.Employee;
 
-public class EmployeeOperationImpl implements EmployeeOperation{
+import java.util.ArrayList;
+import java.util.List;
 
-    private Employee[] employees = new Employee[5];
-    int count=-1;
+public class EmployeeOperationCollectionBasedImpl implements EmployeeOperation{
 
-    // Id should be a positive value
-    // Name must not be empty
-    // Salary should be a positive value
+    private List<Employee> employees = new ArrayList<>();
+
 
     public void addEmployee(Employee employee) throws InvalidInputException {
         if(employee.getId()<=0){
@@ -22,36 +22,30 @@ public class EmployeeOperationImpl implements EmployeeOperation{
         if(employee.getSalary()<=0){
             throw new InvalidInputException("Salary must be a positive value");
         }
-        employees[++count] = employee;
+        employees.add(employee);
         System.out.println("Employee Added : "+employee.getName());
     }
 
     public void showAllEmployees() {
         for (Employee emp:employees){
-            if (emp == null) {
-                System.out.println("All Printed");
-                break;
-            }
             emp.showDetails();
         }
     }
 
 
-    // RecordNotFoundException
-    // Should be thrown when no employee is present for a given id
-
     public Employee findEmployeeById(int id) {
-
-        for (int i = 0; i < 10; i++) {
-            if (employees[i] !=null && employees[i].getId()==id){
-                return employees[i];
+        for (Employee emp:employees){
+            if (emp.getId()==id){
+                return emp;
             }
         }
-        return null;
+        throw new RecordNotFoundException("No employee found with id : "+id);
     }
 
     @Override
     public void removeEmployee(int id) {
-        System.err.println("Invalid Operation");
+        Employee emp = findEmployeeById(id);
+        employees.remove(emp);
+        System.out.println("Employee : "+emp.getName()+ " Removed");
     }
 }
