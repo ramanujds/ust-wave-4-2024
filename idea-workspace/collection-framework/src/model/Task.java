@@ -1,10 +1,11 @@
 package model;
 
+import java.util.Objects;
 import java.util.StringJoiner;
 
 
 
-public class Task{
+public class Task implements Comparable<Task>{
     private int id;
     private String title;
     private Status status;
@@ -48,5 +49,24 @@ public class Task{
                 .toString();
     }
 
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Task task)) return false;
 
+        return id == task.id && Objects.equals(title, task.title) && status == task.status;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + Objects.hashCode(title);
+        result = 31 * result + Objects.hashCode(status);
+        return result;
+    }
+
+    @Override
+    public int compareTo(Task t) {
+        return this.id-t.id;
+    }
 }
