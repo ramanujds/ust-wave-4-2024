@@ -8,12 +8,14 @@ import java.util.*;
 public class TaskManagementWithMap {
 
 
-    Map<Integer,Task> tasks = new HashMap<>();
+    Map<Integer,Task> tasks = new TreeMap<>();
 
 
     void showTasks(){
         System.out.println("Showing all tasks : ");
-
+        for (int id:tasks.keySet()){
+            System.out.println(tasks.get(id));
+        }
     }
 
     void addSomeTasks(){
@@ -27,7 +29,11 @@ public class TaskManagementWithMap {
 
     void showTasks(Status status){
         System.out.println("Showing "+status.name()+" tasks : ");
-
+        for (int id:tasks.keySet()){
+            Task current = tasks.get(id);
+            if (current.getStatus()==status)
+                System.out.println(current);
+        }
     }
 
     public static void main(String[] args) {
