@@ -52,6 +52,16 @@ class EmployeeServiceImplTest {
 
     @Test
     void removeEmployee() {
+
+        // Given
+        int id=1;
+        // When
+        Mockito.doNothing().when(employeeRepository).removeEmployee(id);
+        // Then
+        employeeService.removeEmployee(id);
+        // Verify
+        Mockito.verify(employeeRepository,Mockito.times(1)).removeEmployee(id);
+
     }
 
     @Test
