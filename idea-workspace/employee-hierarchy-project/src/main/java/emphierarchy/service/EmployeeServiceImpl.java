@@ -4,12 +4,13 @@ import emphierarchy.exception.InvalidInputException;
 import emphierarchy.model.Employee;
 import emphierarchy.repository.EmployeeRepository;
 import emphierarchy.repository.EmployeeRepositoryImpl;
+import emphierarchy.repository.EmployeeRepositoryJdbcImpl;
 
 import java.util.List;
 
 public class EmployeeServiceImpl implements EmployeeService {
 
-    private EmployeeRepository empRepo = new EmployeeRepositoryImpl();
+    private EmployeeRepository empRepo = new EmployeeRepositoryJdbcImpl();
 
     public void setEmpRepo(EmployeeRepository empRepo) {
         this.empRepo = empRepo;
