@@ -13,6 +13,8 @@ public class Employee {
     private String location;
     private LocalDate joinedDate;
 
+    private String email;
+
     public Employee(){}
 
     public Employee(int id, String name, double salary, String location, LocalDate joinedDate) {

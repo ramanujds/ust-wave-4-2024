@@ -21,7 +21,6 @@ public class ToDoApi {
 
     @PostMapping
     public Task addTask(@RequestBody Task newTask){
-        System.out.println(newTask);
         return taskService.addTask(newTask);
     }
 
