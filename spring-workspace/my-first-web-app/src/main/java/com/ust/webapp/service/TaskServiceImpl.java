@@ -26,4 +26,22 @@ public class TaskServiceImpl implements TaskService {
     public List<Task> findAllTasks() {
         return taskRepo.findAll();
     }
+
+    public void deleteTodo(int id){
+        taskRepo.deleteById(id);
+    }
+
+    @Override
+    public Task updateTask(int id, Task task) {
+        Task taskToUpdate = findTaskById(id);
+        if (task.getTitle()!=null)
+            taskToUpdate.setTitle(task.getTitle());
+        if (task.getDueDate()!=null)
+            taskToUpdate.setDueDate(task.getDueDate());
+        if (task.getPriority()!=0){
+            taskToUpdate.setPriority(task.getPriority());
+        }
+
+       return taskRepo.save(taskToUpdate);
+    }
 }

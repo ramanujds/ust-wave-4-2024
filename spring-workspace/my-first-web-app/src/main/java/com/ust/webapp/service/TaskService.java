@@ -12,4 +12,8 @@ public interface TaskService {
 
     List<Task> findAllTasks();
 
+    void deleteTodo(int id);
+
+    Task updateTask(int id, Task task);
+
 }
