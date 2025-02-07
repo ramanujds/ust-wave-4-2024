@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -30,8 +31,14 @@ public class ToDoApi {
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Task findById(@PathVariable int id){
+    public Task findById(@PathVariable("id") int id){
         return taskService.findTaskById(id);
+    }
+
+    @GetMapping("/search")
+    @ResponseStatus(HttpStatus.OK)
+    public Task findByTitle(@RequestParam("title") String title){
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND);
     }
 
     @DeleteMapping("/{id}")
