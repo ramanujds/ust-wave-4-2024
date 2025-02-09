@@ -16,4 +16,6 @@ public interface TaskService {
 
     Task updateTask(int id, Task task);
 
+    public List<Task> searchTodosByTitle(String title);
+
 }

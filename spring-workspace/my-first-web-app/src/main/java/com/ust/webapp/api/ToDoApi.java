@@ -37,8 +37,8 @@ public class ToDoApi {
 
     @GetMapping("/search")
     @ResponseStatus(HttpStatus.OK)
-    public Task findByTitle(@RequestParam("title") String title){
-        throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+    public List<Task> findByTitle(@RequestParam("title") String title){
+        return taskService.searchTodosByTitle(title);
     }
 
     @DeleteMapping("/{id}")
